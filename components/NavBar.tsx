@@ -49,7 +49,7 @@ const NavBar = () => {
                         ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}
                         `}
                >
-                    <img className="h-4 lg:h-7" src="/images/80plexx2.png" alt="80Plexx" />
+                    <img className="h-4 lg:h-7" src="/images/80plexx2.png" alt="80Plexx" width={35} height={0} />
                     <div
                          className="
              flex-row

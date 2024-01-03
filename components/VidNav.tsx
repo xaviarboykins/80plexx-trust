@@ -89,7 +89,7 @@ const VidNav = () => {
                               className="flex flex-row items-center gap-2 cursor-pointer relative"
                          >
                               <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-                                   <img src="/images/default-red.png" alt="Photo" />
+                                   <img src="/images/default-red.png" alt="Photo" width={50} height={20} />
                               </div>
                               <BsChevronDown
                                    className={`text-white transition ${showAccountMenu ? "rotate-180" : "rotate-0"}`}
