@@ -4,6 +4,7 @@ import NavbarItem from "./NavbarItem";
 import { BsBell, BsChevronDown, BsSearch } from "react-icons/bs";
 import AccountMenu from "./AccountMenu";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const TOP_OFFSET = 66;
 
@@ -48,7 +49,7 @@ const VidNav = () => {
                     ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}
                     `}
                >
-                    <img className="h-4 lg:h-7" src="/images/logo.png" alt="80Plexx" />
+                    <Image className="h-4 lg:h-7" src="/images/logo.png" alt="80Plexx" />
                     <div
                          className="
                        flex-row
@@ -89,7 +90,7 @@ const VidNav = () => {
                               className="flex flex-row items-center gap-2 cursor-pointer relative"
                          >
                               <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-                                   <img src="/images/default-red.png" alt="Photo" />
+                                   <Image src="/images/default-red.png" alt="Photo" />
                               </div>
                               <BsChevronDown
                                    className={`text-white transition ${showAccountMenu ? "rotate-180" : "rotate-0"}`}

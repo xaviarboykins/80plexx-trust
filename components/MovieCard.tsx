@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfo } from "react-icons/ai";
@@ -16,7 +17,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
 
      return (
           <div className="group bg-zinc-900 col-span relative h-[12vw]">
-               <img
+               <Image
                     className="
                cursor-pointer
                object-cover
@@ -51,7 +52,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                     group-hover:opacity-100
                "
                >
-                    <img
+                    <Image
                          className="
                     cursor-pointer
                     object-cover
