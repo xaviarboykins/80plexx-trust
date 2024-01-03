@@ -2,7 +2,6 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 
 export async function getServerSideProps(context: NextPageContext) {
      const session = await getSession(context);
@@ -43,7 +42,7 @@ const Profiles = () => {
                                             overflow-hidden
                                             "
                                    >
-                                        <Image src="/images/default-red.png" alt="Profile" />
+                                        <img src="/images/default-red.png" alt="Profile" />
                                    </div>
                                    <div
                                         className="
