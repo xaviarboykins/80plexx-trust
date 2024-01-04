@@ -1,15 +1,17 @@
-import { NextPageContext } from "next";
+import { GetServerSidePropsContext, NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 
 import NavBar from "components/NavBar";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]";
 
-export async function getServerSideProps(context: NextPageContext) {
-     const session = await getSession(context);
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+     const session = await getServerSession(context.req, context.res, authOptions);
 
-     if (!session) {
+     if (session) {
           return {
                redirect: {
-                    destination: "/auth",
+                    destination: "/",
                     permanent: false,
                },
           };

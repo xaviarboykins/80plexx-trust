@@ -5,21 +5,26 @@ import VidNav from "components/VidNav";
 import useFavorites from "hooks/useFavorites";
 import useInfoModal from "hooks/useInfoModal";
 import useMovieList from "hooks/useMovieList";
-import { NextPageContext } from "next";
+import { GetServerSidePropsContext, NextPageContext } from "next";
+import { getServerSession } from "next-auth";
 import { getSession } from "next-auth/react";
+import { authOptions } from "./api/auth/[...nextauth]";
 
-export async function getServerSideProps(context: NextPageContext) {
-     const session = await getSession(context);
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+     const session = await getServerSession(context.req, context.res, authOptions);
 
-     if (!session) {
+     if (session) {
           return {
                redirect: {
-                    destination: "/auth",
+                    destination: "/videos",
                     permanent: false,
                },
           };
      }
-     return { props: {} };
+
+     return {
+          props: {},
+     };
 }
 
 export default function Videos() {
