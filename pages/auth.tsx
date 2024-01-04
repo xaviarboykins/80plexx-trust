@@ -1,12 +1,30 @@
 import Input from "components/Input";
-import { signIn } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 import axios from "axios";
 import { ChangeEvent, useCallback, useState } from "react";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import { NextPageContext } from "next";
+
+export async function getServerSideProps(context: NextPageContext) {
+     try {
+          const session = await getSession(context);
+          if (session) {
+               return {
+                    redirect: {
+                         destination: "/",
+                         permanent: false,
+                    },
+               };
+          }
+          return { props: {} };
+     } catch (error) {
+          console.error("Error getting session:", error);
+          return { props: {} };
+     }
+}
 
 const Auth = () => {
      const [name, setName] = useState("");
