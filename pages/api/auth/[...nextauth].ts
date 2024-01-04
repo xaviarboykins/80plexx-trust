@@ -7,7 +7,7 @@ import GoogleProvider from "next-auth/providers/google";
 
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
-import prismadb from "lib/prismadb";
+import prisma from "lib/prisma";
 
 export const authOptions: AuthOptions = {
      providers: [
@@ -37,7 +37,7 @@ export const authOptions: AuthOptions = {
                          throw new Error("Email and password required");
                     }
 
-                    const user = await prismadb.user.findUnique({
+                    const user = await prisma.user.findUnique({
                          where: {
                               email: credentials.email,
                          },
@@ -61,7 +61,7 @@ export const authOptions: AuthOptions = {
           signIn: "/auth",
      },
      debug: process.env.NODE_ENV === "development",
-     adapter: PrismaAdapter(prismadb),
+     adapter: PrismaAdapter(prisma),
      session: { strategy: "jwt" },
      secret: process.env.NEXTAUTH_SECRET,
 };
