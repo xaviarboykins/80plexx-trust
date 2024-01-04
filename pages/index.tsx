@@ -1,8 +1,7 @@
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 
-import useCurrentUser from "@/hooks/useCurrentUser";
-import NavBar from "@/components/NavBar";
+import NavBar from "components/NavBar";
 
 export async function getServerSideProps(context: NextPageContext) {
      const session = await getSession(context);

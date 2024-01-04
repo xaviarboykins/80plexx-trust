@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfo } from "react-icons/ai";
 import FavoriteButton from "./favoriteButton";
-import useInfoModal from "@/hooks/useInfoModal";
+import useInfoModal from "hooks/useInfoModal";
 
 interface MovieCardProps {
      data: Record<string, any>;

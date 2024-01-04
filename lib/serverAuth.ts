@@ -1,5 +1,5 @@
-import prismadb from "@/lib/prismadb";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import prismadb from "lib/prismadb";
+import { authOptions } from "pages/api/auth/[...nextauth]";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 

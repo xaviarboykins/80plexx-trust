@@ -3,8 +3,8 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import PlayButton from "./PlayButton";
 import FavoriteButton from "./favoriteButton";
-import useInfoModal from "@/hooks/useInfoModal";
-import useMovie from "@/hooks/useMovie";
+import useInfoModal from "hooks/useInfoModal";
+import useMovie from "hooks/useMovie";
 
 interface InfoModalProps {
      visible?: boolean;

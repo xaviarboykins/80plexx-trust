@@ -1,6 +1,6 @@
 import React from "react";
 
-import useMovie from "@/hooks/useMovie";
+import useMovie from "hooks/useMovie";
 import { useRouter } from "next/router";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 

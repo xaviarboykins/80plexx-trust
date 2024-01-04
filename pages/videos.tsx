@@ -1,10 +1,10 @@
-import Billboard from "@/components/Billboard";
-import InfoModal from "@/components/InfoModal";
-import MovieList from "@/components/MovieList";
-import VidNav from "@/components/VidNav";
-import useFavorites from "@/hooks/useFavorites";
-import useInfoModal from "@/hooks/useInfoModal";
-import useMovieList from "@/hooks/useMovieList";
+import Billboard from "components/Billboard";
+import InfoModal from "components/InfoModal";
+import MovieList from "components/MovieList";
+import VidNav from "components/VidNav";
+import useFavorites from "hooks/useFavorites";
+import useInfoModal from "hooks/useInfoModal";
+import useMovieList from "hooks/useMovieList";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 
